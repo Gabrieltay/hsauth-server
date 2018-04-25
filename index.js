@@ -1,7 +1,7 @@
-const express = require('express');
-const jwt = require('jsonwebtoken');
+var express = require('express');
+var jwt = require('jsonwebtoken');
 
-const app = express();
+var app = express();
 app.set('port', (process.env.PORT || 8080));
 
 const secretkey = 'Hello World';
