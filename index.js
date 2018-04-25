@@ -1,7 +1,7 @@
-var express = require('express');
-var jwt = require('jsonwebtoken');
+var express = require('express')
+var jwt = require('jsonwebtoken')
 
-var app = express();
+var app = express()
 app.set('port', (process.env.PORT || 8080));
 
 const secretkey = 'Hello World';
@@ -91,9 +91,11 @@ function genToken(req, res, next) {
     }
 }
 
+
 var server = app.listen(app.get('port'), function () {
 	
 	var host = server.address().address
 	var port = server.address().port
-	console.log("JWT Auth Server listening on port %s", app.get('port'))
+	console.log("Pseudo Server listening on port %s", app.get('port'))
 })
+
