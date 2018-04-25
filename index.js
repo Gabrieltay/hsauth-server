@@ -75,7 +75,7 @@ function genToken(req, res, next) {
         // Split at the space
         const basic = authHeader.split(' ');
         // Get Base64 Basic Credentials
-        const cred = Buffer.from(basic[1], 'base64').toString();
+        const cred = new Buffer(basic[1], 'base64').toString();
         // Split at the :
         const credArray = cred.split(':');
         // Get Username from array
