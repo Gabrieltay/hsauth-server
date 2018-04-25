@@ -4,12 +4,20 @@
   "description": "JWT example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "Gabriel Tay",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "8.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gabrieltay/hsauth-server"
   }
 }
