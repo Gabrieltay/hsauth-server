@@ -6,6 +6,10 @@ app.set('port', (process.env.PORT || 8080));
 
 const secretkey = 'Hello World';
 
+app.get('/', function (req, res) {
+    res.send("Welcome to bgphs jwt API server");
+ })
+
 app.get('/api', (req, res) => {
     res.json({
         message: 'Welcome to the API'
