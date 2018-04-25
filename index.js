@@ -87,4 +87,9 @@ function genToken(req, res, next) {
     }
 }
 
-app.listen(app.get('port'), () => console.log('Server started on port ' + app.get('port')));
+var server = app.listen(app.get('port'), function () {
+	
+	var host = server.address().address
+	var port = server.address().port
+	console.log("JWT Auth Server listening on port %s", app.get('port'))
+})
