@@ -25,9 +25,11 @@ app.post('/api/login', genToken, (req, res) => {
         access: 'basic user'
     }
 
-    jwt.sign({user}, secretkey, (err, token) => {
+    jwt.sign({user}, secretkey, (err, access_token) => {
         res.json({
-            token
+            access_token,
+            token_type: "bearer",
+            expires_in: 3600
         });
     });
 });
