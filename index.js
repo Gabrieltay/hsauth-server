@@ -16,6 +16,24 @@ app.get('/api', (req, res) => {
     });
 });
 
+app.post('/api/Token', genToken, (req, res) => {
+    
+    // Mock User Info
+    const user = {
+        id: 1,
+        username: req.username,
+        access: 'basic user'
+    }
+
+    jwt.sign({user}, secretkey, (err, access_token) => {
+        res.json({
+            access_token,
+            token_type: "bearer",
+            expires_in: 3600
+        });
+    });
+});
+
 app.post('/api/login', genToken, (req, res) => {
     
     // Mock User Info
