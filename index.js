@@ -1,7 +1,9 @@
 var express = require('express')
+var bodyParser = require('body-parser')
 var jwt = require('jsonwebtoken')
 
 var app = express()
+app.use(bodyParser.urlencoded())
 app.set('port', (process.env.PORT || 8080));
 
 const secretkey = 'Hello World';
@@ -30,7 +32,7 @@ app.post('/api/Token',  (req, res) =>  {
             access_token,
             token_type: "bearer",
             expires_in: 3600,
-            req: req
+            req: req.body
         });
     });
 });
