@@ -4,6 +4,8 @@ var jwt = require('jsonwebtoken')
 
 var app = express()
 app.use(bodyParser.urlencoded())
+app.use(bodyParser.json())
+app.use(bodyParser.text())
 app.set('port', (process.env.PORT || 8080));
 
 const secretkey = 'Hello World';
