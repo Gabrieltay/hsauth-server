@@ -26,8 +26,7 @@ app.post('/api/Token',  (req, res) =>  {
     const user = {
         id: 1,
         username: req.body.username,
-        access: 'basic user',
-        timestamp: getCurrentTimestamp()
+        access: 'basic user'
     }
 
     jwt.sign({user}, secretkey, (err, access_token) => {
@@ -35,7 +34,6 @@ app.post('/api/Token',  (req, res) =>  {
             access_token,
             token_type: "bearer",
             expires_in: 3600,
-            body: req.body.username,
             timestamp: getCurrentTimestamp(),
         });
     });
