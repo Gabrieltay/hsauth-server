@@ -21,7 +21,7 @@ app.post('/api/Token',  (req, res) =>  {
     // Mock User Info
     const user = {
         id: 1,
-        username: req.body.username,
+        username: "SDSDSD",
         access: 'basic user'
     }
 
