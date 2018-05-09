@@ -25,8 +25,9 @@ app.post('/api/Token',  (req, res) =>  {
     // Mock User Info
     const user = {
         id: 1,
-        username: "SDSDSD",
-        access: 'basic user'
+        username: req.body.username,
+        access: 'basic user',
+        timestamp: getCurrentTimestamp()
     }
 
     jwt.sign({user}, secretkey, (err, access_token) => {
@@ -34,7 +35,7 @@ app.post('/api/Token',  (req, res) =>  {
             access_token,
             token_type: "bearer",
             expires_in: 3600,
-            req: req
+            time: 
         });
     });
 });
@@ -116,6 +117,14 @@ function genToken(req, res, next) {
     }
 }
 
+function getCurrentTimestamp() {
+    var date = new Date();
+    date.setHours(date.getHours() + Math.round(date.getMinutes()/60));
+    date.setMinutes(0);
+    date.setSeconds(0);
+
+    return Math.floor(date.valueOf() / 1000);
+}
 
 var server = app.listen(app.get('port'), function () {
 	
