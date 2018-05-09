@@ -35,7 +35,8 @@ app.post('/api/Token',  (req, res) =>  {
             access_token,
             token_type: "bearer",
             expires_in: 3600,
-            timestamp: getCurrentTimestamp()
+            body: req.body,
+            timestamp: getCurrentTimestamp(),
         });
     });
 });
