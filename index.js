@@ -16,7 +16,7 @@ app.get('/api', (req, res) => {
     });
 });
 
-app.post('/api/Token', genToken, (req, res) => {
+app.post('/api/Token', function (req, res) {
     
     // Mock User Info
     const user = {
