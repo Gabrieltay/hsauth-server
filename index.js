@@ -32,7 +32,7 @@ app.post('/api/Token',  (req, res) =>  {
             access_token,
             token_type: "bearer",
             expires_in: 3600,
-            req: req.body
+            req: req
         });
     });
 });
